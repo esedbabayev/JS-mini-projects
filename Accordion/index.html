@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accordion</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: '#da373d',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="flex justify-center items-center min-h-screen">
+  <div class="w-full max-w-md p-4 bg-gray-800 rounded-lg shadow-lg">
+    <!-- Accordion Item 1 -->
+    <div class="accordion-item border-b border-gray-700">
+      <button
+        class="accordion-header flex justify-between w-full text-left py-3 px-4 bg-gray-800 text-white hover:bg-gray-900 focus:outline-none">
+        Open source
+        <span class="accordion-icon transform transition-transform duration-300">▼</span>
+      </button>
+      <div class="accordion-content hidden p-4 bg-gray-700 text-gray-300">
+        <p>Open source software is software with source code that anyone can inspect, modify, and enhance.</p>
+      </div>
+    </div>
+    <!-- Accordion Item 2 -->
+    <div class="accordion-item border-b border-gray-700">
+      <button
+        class="accordion-header flex justify-between w-full text-left py-3 px-4 bg-gray-800 text-white hover:bg-gray-900 focus:outline-none">
+        Architecture
+        <span class="accordion-icon transform transition-transform duration-300">▼</span>
+      </button>
+      <div class="accordion-content hidden p-4 bg-gray-700 text-gray-300">
+        <p>Software architecture refers to the high-level structures of a software system and the discipline of creating
+          such structures.</p>
+      </div>
+    </div>
+    <!-- Accordion Item 3 -->
+    <div class="accordion-item">
+      <button
+        class="accordion-header flex justify-between w-full text-left py-3 px-4 bg-gray-800 text-white hover:bg-gray-900 focus:outline-none">
+        Can I use both?
+        <span class="accordion-icon transform transition-transform duration-300">▼</span>
+      </button>
+      <div class="accordion-content hidden p-4 bg-gray-700 text-gray-300">
+        <p>Yes, you can use both open source software and good architecture principles together to create robust
+          software systems.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
