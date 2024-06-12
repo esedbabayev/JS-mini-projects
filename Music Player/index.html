@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Player</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body class="bg-gray-900 flex items-center justify-center min-h-screen">
+  <div class="bg-black p-6 rounded-lg w-full max-w-6xl flex items-center justify-between">
+    <!-- Album Art and Song Info -->
+    <div class="flex items-center">
+      <!-- Album Art -->
+      <div class="w-36 h-full rounded">
+        <img src="images/The Trio - The Good, The Bad And The Ugly.png" alt="">
+      </div>
+
+      <!-- Song Info -->
+      <div>
+        <h3 class="text-white text-lg font-semibold">The Trio</h3>
+        <p class="text-gray-400 text-base">Ennio Morricone</p>
+      </div>
+    </div>
+
+    <!-- Control and Progress Bar -->
+    <div class="flex flex-col items-center space-y-4 w-1/2">
+      <!-- Control Buttons-->
+      <div class="flex items-center justify-center space-x-6">
+        <!-- Shuffle Button -->
+        <button class="text-[#C4C4C4] hover:text-white text-2xl">
+          <i class="fa fa-random"></i>
+        </button>
+
+        <!-- Previous Button -->
+        <button id="prevButton" class="text-[#C4C4C4] hover:text-white text-2xl">
+          <i id="prevIcon" class="fa fa-step-backward"></i>
+        </button>
+
+        <!-- Play/Pause Button -->
+        <button id="playPauseBtn"
+          class="text-black w-11 h-11 flex justify-center items-center bg-white rounded-full hover:bg-slate-200 text-2xl">
+          <i id="playPauseIcon" class="fa fa-play"></i>
+        </button>
+
+        <!-- Next Button -->
+        <button id="nextButton" class="text-[#C4C4C4] hover:text-white text-2xl">
+          <i id="nextIcon" class="fa fa-step-forward"></i>
+        </button>
+
+        <!-- Repeat Button -->
+        <button class="text-[#C4C4C4] hover:text-white text-2xl">
+          <i class="fa fa-repeat"></i>
+        </button>
+      </div>
+
+      <!-- Progress Bar -->
+      <div class="flex items-center justify-center w-full space-x-4">
+        <!-- Current time -->
+        <span id="currentTime" class="text-gray-400 text-base">0:00</span>
+        <!-- Progress bar -->
+        <div class="relative flex-grow">
+          <div class="absolute inset-0 bg-gray-600 rounded-full h-2"></div>
+          <div class="absolute inset-0 bg-green-500 rounded-full h-2 w-[75%]"></div>
+        </div>
+        <!-- Total time -->
+        <span id="totalTime" class="text-gray-400 text-base">0:00</span>
+      </div>
+    </div>
+
+    <!-- Volume Control -->
+    <div class="flex items-center space-x-4">
+      <!-- Volume Icon -->
+      <button class="text-gray-400 hover:text-white text-2xl">
+        <i class="fa fa-volume-up"></i>
+      </button>
+      <!-- Volume Slider -->
+      <input type="range" class="w-32 h-2 bg-gray-700 rounded-full">
+    </div>
+  </div>
+
+   <audio id="music" src="music/The Trio - The Good, The Bad And The Ugly.mp3"></audio>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
