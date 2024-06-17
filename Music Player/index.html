@@ -13,15 +13,15 @@
   <div class="bg-black p-6 rounded-lg w-full max-w-6xl flex items-center justify-between">
     <!-- Album Art and Song Info -->
     <div class="flex items-center">
-      <!-- Album Art -->
-      <div class="w-36 h-full rounded">
-        <img src="images/The Trio - The Good, The Bad And The Ugly.png" alt="">
+      <!-- Album Art Container -->
+      <div class="w-36 h-36 overflow-hidden flex items-center justify-center bg-black rounded-md">
+        <img id="image" src="images/The Trio - The Good, The Bad And The Ugly.png" alt="Album Art" class="w-full h-full object-cover">
       </div>
 
       <!-- Song Info -->
-      <div>
-        <h3 class="text-white text-lg font-semibold">The Trio</h3>
-        <p class="text-gray-400 text-base">Ennio Morricone</p>
+      <div class="ml-4"> <!-- Add some margin to the left of the info for spacing -->
+        <h3 id="title" class="text-white text-lg font-semibold">The Trio</h3>
+        <p id="artist" class="text-gray-400 text-base">Ennio Morricone</p>
       </div>
     </div>
 
@@ -59,11 +59,11 @@
       <!-- Progress Bar -->
       <div class="flex items-center justify-center w-full space-x-4">
         <!-- Current time -->
-        <span id="currentTime" class="text-gray-400 text-base">0:00</span>
+        <span id="ongoingTime" class="text-gray-400 text-base">0:00</span>
         <!-- Progress bar -->
-        <div class="relative flex-grow">
+        <div id="proggressContainer" class="relative flex-grow">
           <div class="absolute inset-0 bg-gray-600 rounded-full h-2"></div>
-          <div class="absolute inset-0 bg-green-500 rounded-full h-2 w-[75%]"></div>
+          <div id="proggressBar" class="absolute inset-0 bg-white hover:bg-green-500 transition-all duration-300 rounded-full h-2 w-0"></div>
         </div>
         <!-- Total time -->
         <span id="totalTime" class="text-gray-400 text-base">0:00</span>
@@ -74,14 +74,14 @@
     <div class="flex items-center space-x-4">
       <!-- Volume Icon -->
       <button class="text-gray-400 hover:text-white text-2xl">
-        <i class="fa fa-volume-up"></i>
+        <i id="volumeIcon" class="fa fa-volume-high"></i>
       </button>
       <!-- Volume Slider -->
-      <input type="range" class="w-32 h-2 bg-gray-700 rounded-full">
+      <input type="range" id="volumeSlider" class="w-32 h-2 bg-gray-700 rounded-full" min="0" max="100" step="1" value="50">
     </div>
   </div>
 
-   <audio id="music" src="music/The Trio - The Good, The Bad And The Ugly.mp3"></audio>
+  <audio id="music" src="music/The Trio - The Good, The Bad And The Ugly.mp3"></audio>
 
   <script src="script.js"></script>
 </body>
