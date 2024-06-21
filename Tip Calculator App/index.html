@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tip Calculator App</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    /* Custom Tailwind utilities */
+    .bg-primary {
+      background-color: #00474B;
+    }
+
+    .bg-secondary {
+      background-color: #26C2AE;
+    }
+
+    .bg-very-dark-cyan {
+      background-color: #00474B;
+    }
+
+    .bg-light-cyan {
+      background-color: #c5e4e8;
+    }
+
+    .text-dark-grayish-cyan {
+      color: #7F9C9F;
+    }
+
+    .text-primary {
+      color: #00474B;
+    }
+
+    .hover:hover {
+      background-color: #9de7dc;
+      transition: all 200ms;
+    }
+  </style>
+</head>
+
+<body class="bg-light-cyan min-h-screen flex items-center justify-center">
+  <div class="bg-white p-8 rounded-2xl shadow-lg max-w-3xl w-full">
+    <div class="grid md:grid-cols-2 gap-8">
+      <!-- Left Column -->
+      <form id="form">
+        <div class="mb-8">
+          <label for="bill" class="block text-dark-grayish-cyan mb-2">Bill</label>
+          <span id="noZeroBill"></span>
+          <div class="relative">
+            <input id="bill"
+              class="w-full p-4 text-lg border border-gray-200 rounded-lg focus:outline-none focus:border-primary"
+              placeholder="0.00">
+            <span class="absolute left-4 top-4 text-dark-grayish-cyan"></span>
+          </div>
+        </div>
+
+        <div class="mb-8">
+          <label class="block text-dark-grayish-cyan mb-2">Select Tip %</label>
+          <div class="grid grid-cols-3 grid-rows-2 gap-4">
+            <button id="tip-5" class="tip-btn bg-very-dark-cyan hover text-white py-2 rounded-lg focus:outline-none">5%</button>
+            <button id="tip-10" class="tip-btn bg-very-dark-cyan hover text-white py-2 rounded-lg focus:outline-none">10%</button>
+            <button id="tip-15" class="tip-btn bg-very-dark-cyan hover text-white py-2 rounded-lg focus:outline-none">15%</button>
+            <button id="tip-25" class="tip-btn bg-very-dark-cyan hover text-white py-2 rounded-lg focus:outline-none">25%</button>
+            <button id="tip-50" class="tip-btn bg-very-dark-cyan hover text-white py-2 rounded-lg focus:outline-none">50%</button>
+            <input id="custom-tip"
+              class="w-full p-4 text-lg border border-gray-200 rounded-lg focus:outline-none focus:border-primary"
+              placeholder="Custom">
+          </div>
+        </div>
+
+        <div class="mb-8">
+          <label for="people" class="block text-dark-grayish-cyan mb-2">Number of People</label>
+          <span id="noZero"></span>
+          <div class="relative">
+            <input id="number-of-people"
+              class="w-full p-4 text-lg border border-gray-200 rounded-lg focus:outline-none focus:border-primary"
+              placeholder="0">
+            <span class="absolute left-4 top-4 text-dark-grayish-cyan"></span>
+          </div>
+        </div>
+      </form>
+      <!-- Right Column -->
+      <div class="bg-primary p-6 rounded-xl text-white flex flex-col justify-between">
+        <div class="mb-8">
+          <div class="flex justify-between items-center mb-4">
+            <div>
+              <span class="block text-sm">Tip Amount</span>
+              <span class="text-dark-grayish-cyan text-xs">/ person</span>
+            </div>
+            <span id="tip-amount-per-person" class="text-2xl">$0.00</span>
+          </div>
+          <div class="flex justify-between items-center">
+            <div>
+              <span class="block text-sm">Total</span>
+              <span class="text-dark-grayish-cyan text-xs">/ person</span>
+            </div>
+            <span id="total-amount" class="text-2xl">$0.00</span>
+          </div>
+        </div>
+        <button id="reset"
+          class="bg-secondary text-primary w-full py-2 rounded-lg font-bold focus:outline-none focus:ring-cyan-400">RESET</button>
+      </div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+
+</html>
